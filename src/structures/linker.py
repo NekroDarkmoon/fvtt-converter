@@ -1,10 +1,8 @@
 # -----------------------------------------------------------
 #                         Imports
 # -----------------------------------------------------------
-import json
-
 from abc import ABC, abstractmethod
-from typing import Any, Optional
+from typing import Any
 
 
 # -----------------------------------------------------------
@@ -16,6 +14,11 @@ class Linker(ABC):
     @abstractmethod
     def __init__(self, type) -> None:
         self.type = type
+
+    @property
+    @abstractmethod
+    def bindings(self) -> dict[str, Any]:
+        ...
 
     @abstractmethod
     async def convert(self) -> None:
