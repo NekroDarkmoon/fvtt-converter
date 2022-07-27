@@ -13,7 +13,7 @@ import os
 
 from logging.handlers import RotatingFileHandler
 
-from main.app import App
+from src.app import App
 
 
 # -----------------------------------------------------------

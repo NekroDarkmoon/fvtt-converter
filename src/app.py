@@ -1,9 +1,11 @@
 # -----------------------------------------------------------
 #                         Imports
 # -----------------------------------------------------------
+import os
 
 from enum import Enum
-import os
+
+from src.structures.documentModel import Test
 
 
 # -----------------------------------------------------------
@@ -26,9 +28,8 @@ class App:
         """ Start the Application """
         # Get Json files
         filepath: str = self._get_filepath()
-
-
-
+        files: list[str] = [f'{filepath}{file}' for file in os.listdir(
+            filepath) if file.endswith('.json')]
 
     def _get_filepath(self) -> str:
         while True:
