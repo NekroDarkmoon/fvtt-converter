@@ -1,0 +1,25 @@
+{
+	"editor.tabSize": 4,
+	"editor.formatOnSave": true,
+
+	"python.formatting.provider": "autopep8",
+	"python.formatting.autopep8Args": ["--indent-size=4"],
+	"python.linting.pylintEnabled": true,
+	"python.linting.lintOnSave": true,
+
+	"python.linting.pylintArgs": [
+		"--indent-string=\"  \"",
+		"--ignore C0114",
+		"--ignore C0115",
+		"--ignore C0116"
+	],
+	"cSpell.words": [
+		"aiohttp",
+		"alru",
+		"asyncpg",
+		"fetchrow",
+		"unban",
+		"uvloop"
+	],
+	"python.linting.enabled": true
+}
