@@ -1,6 +1,7 @@
 # -----------------------------------------------------------
 #                         Imports
 # -----------------------------------------------------------
+from this import d
 from typing import Any
 
 from src.structures.linker import Linker
@@ -43,8 +44,8 @@ class DND5E_A5E_LINKER(Linker):
             'activation.condition': 'activation.reactionTrigger',
             'duration.value': 'duration.value',
             'duration.units': 'duration.unit',
-            'target': self._cv_target(),
-            'range': self._cv_range(),
+            'target': self._cv_target,
+            'range': self._cv_range,
             'uses.value': 'uses.value',
             'uses.max': 'uses.max',
             'uses.per': 'uses.per',
@@ -58,11 +59,14 @@ class DND5E_A5E_LINKER(Linker):
             # 'chatFlavor': '',
             'critical.threshold': 'attack.critThreshold',
             # 'critical.damage': '',
-            'damage': self._cv_damage(),
+            'damage': self._cv_damage,
             'save.ability': 'save.targetAbility',
-            'save.dc': 'save.dc',
+            'save.dc': self._cv_spellDC,
             # 'save.scaling': '',
         }
+
+    def _cv_spellDC(self) -> str:
+        return '@spellDC'
 
     def _cv_target(self) -> None:
         ...
